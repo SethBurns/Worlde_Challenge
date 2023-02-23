@@ -1,5 +1,3 @@
-### Day 1 (Feb.22)
----
 #### Debugging
 1. `object` : important to keep the format right. Missing "," or ";" can cause an error. (e.g. we ran into an error because we forgot to put "," after the key-value pairs within the curly brackets)
     ```js
@@ -25,7 +23,18 @@
     var output = words.filter(input => input.charAt(0) === 'a');
     ```
     - here, `input.charAt(0) === 'a'` will produce a proper boolean value and Array output will become`['apple']`
+3. using `!` in `.filter()` to negate the boolean value. 
+```js
+var names = ['Mark', 'Daisy', 'Mickey'];
+var filteredNames = names.filter(word => !word.includes('i'));
+```
+`word => !word.includes('i')`: this function will return true if the word does not contain character 'i', return false if the word contains 'i'. 
+`names.filter(word => !word.includes('i'));`: keep the words that do not contain character `i`, eliminate the words that contain character `i`. (`filteredNames` will be `['Mark']`)
+
+`names.filtered(word => word.includes('i'))`: keep the words that contain character 'i', eliminate the words that do not contain character 'i'. (`filteredNames` will be `['Daisy', 'Mickey']`)
+
 3. lowercase and uppercase matters, especially when we use strictly equal `===` 
+4. `.toLowerCase()` and `toUpperCase()` do not modify the original array, it returns a new string formatted to lower/upper case. 
 
 
 
@@ -45,6 +54,9 @@
     - Regular expression: like a powerful search engine
 
     - Linux and Mac are both originated from Unix, which has a box of tools such as regular expression, ls, cd, and a bunch of other commands
+
+- git
+    - after `create a local repo -> add and commit -> create an online repo -> connect the two repos -> git push`, if we delete the `.git` in the local directory and then create a local repo again and connect to the same online repo, you will not be able to push file to the repo anymore(will run into an access error)
 ---
 #### Review
 - `cmd` + `d` in VS code: select and substitute
@@ -53,6 +65,10 @@
     - Have to do `git init` first before connect to a github online repo (you have to have a local repo first)
     - `git add` and `git commit` first before you push, otherwise you’ll have nothing to push and that will throw you an error 
     - `git clone` + SSH address
+- `.charAt(index)` -> `char`
+- `.indexOf(char)` -> `index`
+- `.includes(char)` -> `boolean`
+
 
 
 
