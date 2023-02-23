@@ -611,31 +611,31 @@ var answers = [
 
 
 var letter1 = {
-    letter: 'a',
+    letter: 'g',
     position: 0,
     color: 'g',
 };
 
 var letter2 = {
-    letter: 'u',
+    letter: 'x',
     position: 1,
     color: 'b'
 };
 
 var letter3 = {
-    letter: 'd',
+    letter: 'i',
     position: 2,
     color: 'y'
 };
 
 var letter4 = {
-    letter: 'i',
+    letter: 'y',
     position: 3,
     color: 'b'
 };
 
 var letter5 = {
-    letter: 'o',
+    letter: 'z',
     position: 4,
     color: 'b'
 };
@@ -671,24 +671,41 @@ var input = [letter1, letter2, letter3, letter4, letter5];
    */
 
 function wordle(inputArray) {
-
+    var filteredAnswers = answers;
     for (var i = 0; i < inputArray.length; i++) {
-        var filteredAnswers = [];
+        var letter = inputArray[i].letter.toUpperCase();
+        var position = inputArray[i].position;
         // check if any our letter is green
         if (inputArray[i].color === "g") {
             // go through Array answers, push strings that do meet the condition into new array
-            var letter = inputArray[i].letter;
-            var position = inputArray[i].position;
-            filteredAnswers = answers.filter(word => word.charAt(position) === letter );
-            console.log(filteredAnswers);
+            filteredAnswers = filteredAnswers.filter(word => word.charAt(position) === letter);
+        }
+        // check if any our letter is black
+        if (inputArray[i].color === "b") {
+            //go through Array filteredAnswers, remove strings that include the letter in any index
+            filteredAnswers = filteredAnswers.filter(word => word.includes(letter) !== true);
+        }
+        // check if any our letter is yellow 
+        if (inputArray[i].color === "y") {
+            // remove any strings that do not have that letter in the indexes
+            filteredAnswers = filteredAnswers.filter(word => word.includes(letter));
+            // remove any strings that have that letter in that index, update Array filteredAnswers
+            filteredAnswers = filteredAnswers.filter(word => word.charAt(position) !== letter);
+            
+
         }
     }
+    console.log(filteredAnswers);
+    
+   
+    
+
+    
+    
 
     
 
 
-// after that, we only need to work with the new Array filteredAnswers
-// we will have an array of words with green letters
 }
 
 wordle(input);
