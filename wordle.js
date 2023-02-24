@@ -683,7 +683,7 @@ function wordle(inputArray) {
         // check if any our letter is black
         if (inputArray[i].color === "b") {
             //go through Array filteredAnswers, remove strings that include the letter in any index
-            filteredAnswers = filteredAnswers.filter(word => word.includes(letter) !== true);
+            filteredAnswers = filteredAnswers.filter(word => !word.includes(letter));
         }
         // check if any our letter is yellow 
         if (inputArray[i].color === "y") {
