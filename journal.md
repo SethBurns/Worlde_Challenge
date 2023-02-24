@@ -57,6 +57,8 @@ var filteredNames = names.filter(word => !word.includes('i'));
 
 - git
     - after `create a local repo -> add and commit -> create an online repo -> connect the two repos -> git push`, if we delete the `.git` in the local directory and then create a local repo again and connect to the same online repo, you will not be able to push file to the repo anymore(will run into an access error)
+    - to exist `git log` command, press `q`
+    - to edit the commit message, use `git commit --amend`. Then edit the message in the git message file file. Save and close the file. 
 ---
 #### Review
 - `cmd` + `d` in VS code: select and substitute
