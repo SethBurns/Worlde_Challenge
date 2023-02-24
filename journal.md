@@ -68,6 +68,10 @@ var filteredNames = names.filter(word => !word.includes('i'));
 - `.charAt(index)` -> `char`
 - `.indexOf(char)` -> `index`
 - `.includes(char)` -> `boolean`
+- string interpolation 
+    - ```
+       `${variableName}` 
+       ```
 
 
 
