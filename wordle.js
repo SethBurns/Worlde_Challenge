@@ -642,9 +642,6 @@ var letter5 = {
 
 var input = [letter1, letter2, letter3, letter4, letter5];
 
-
-
-
   /** arguments: array of five objects
    *    function needs to go through each obj:
    * => if (letterX.color === 'g'):
